@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Login & Registration Form</title> 
+</head>
+<body>
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <div class="title">Login</div>
+                <form id="loginForm" onsubmit="signIn(event)">
+                    <div class="input-field">
+                        <input type="text" id="Lemail" placeholder="Email" required>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="Lpassword" placeholder="Password" required>
+                        <i class="fa-solid fa-lock"></i>
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck" required>
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+                        
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>
+
+                    <div id="login">
+                        <button class="input-field button" type="submit" value="Login" onclick="signIn()">Submit</button>
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link">Signup Now</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form signup">
+                <div class="title">Registration</div>
+
+                <form id="signupForm" onsubmit="signup(event)">
+                    <div class="input-field">
+                        <input type="text" id="Name" placeholder="Name" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="Email" placeholder="Email" required>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" id="ContactNo" placeholder="Contact No" required>
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <i class="fa-solid fa-lock"></i>
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="Cpassword" placeholder="Confirm password" required>
+                        <i class="fa-solid fa-lock"></i>
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon" required>
+                            <label for="termCon" class="text">I accept all the terms and conditions</label>
+                        </div>
+                    </div>
+
+                    <div >
+                        <button class="input-field button" type="submit" onclick="signup()">Submit</button>
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="text login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript.js"></script> 
+    <script src="https://kit.fontawesome.com/a81a450ca1.js" crossorigin="anonymous"></script>
+</body>
+</html>

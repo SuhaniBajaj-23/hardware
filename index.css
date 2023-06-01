@@ -1,0 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1E3050;
+}
+
+.container{
+    opacity: 80%;
+    max-width: 430px;
+    width: 100%;
+    background: #dbe1e3;
+}
+
+.container .forms{
+    align-items: center;
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 200%;
+}
+
+.container .form{
+    width: 50%;
+    padding: 30px;
+    background-color:#dbe1e3;
+}
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+}
+
+.container .signup{
+    opacity: 0;
+}
+
+.container.active .signup{
+    opacity: 1;
+}
+
+.container .form .title{
+    text-align: center;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input{
+    background-color: #dbe1e3;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ffffff;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1E3050;
+    font-size: 23px;
+}
+
+.input-field i.fa-eye-slash{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-content input{
+    margin-right: 10px;
+    accent-color: #1E3050;
+}
+
+.form .text{
+    color: #072163;
+    font-size: 14px;
+}
+
+.form a.text{
+    color: #1E3050;
+    text-decoration: none;
+}
+
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+}
+
+.form .button {
+    border: none;
+    color: #dbe1e3;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 6px;
+    background-color: #1E3050;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #1e3050db;
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}
