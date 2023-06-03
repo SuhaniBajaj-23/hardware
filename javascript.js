@@ -19,16 +19,10 @@ function signup(event) {
     var pass = document.querySelector('#password').value;
     var cpass = document.querySelector('#Cpassword').value;
     var passwordStrength = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
-    // var lowerCaseLetters = /[a-z]/g;
-    // var upperCaseLetters = /[A-Z]/g;
-    // var numbers = /[0-9]/g;
-    // if (!pass.match(numbers)) {
-    //   alert('please add 1 number');
-    // } else if (!pass.match(upperCaseLetters)) {
-    //   alert('please add 1 uppercase letter');
-    // } else if (!pass.match(lowerCaseLetters)) {
-    //   alert('please add 1 lowercase letter');
-    // }
+    var messagee = document.querySelector('#messagee');
+    var form = document.querySelector('#signupForm');
+    // var div = document.querySelector("#message");
+
     if(!passwordStrength.test(pass)){
       alert('Password should contain 1 uppercase letter, 1 lowercase letter, 1 numerical, 1 special character and should be atleast 8 characters long');
     }else if (pass !== cpass) {
@@ -49,31 +43,70 @@ function signup(event) {
       if(!usersr.some(user => user.email === userData.email)) {
         usersr.push(userData);
         localStorage.setItem('Users', JSON.stringify(usersr));
-        // location.reload()
+        //location.reload()
         console.log(userData)
-        alert("successfully signed in");
-        container.classList.remove("active");
-       }
+        messagee.textContent = "Successfully Signed Up";
+        messagee.style.display = "block";
+        messagee.style.color = 'black';
+        messagee.style.textAlign = 'center';
+        form.reset();
+        setTimeout(function() {
+          messagee.style.display = "none";
+        }, 5000);
+      }
        else {
-        alert("user already exits");
+        // alert("user already exits");
+        messagee.textContent = "user already exists";
+          messagee.style.display = "block";
+          messagee.style.color = 'red';
+          messagee.style.textAlign = 'center';
+          form.reset();
+          setTimeout(function() {
+            messagee.style.display = "none";
+          }, 5000);
        }
     }
   }
 
   function signIn() {
+    var message = document.querySelector('#message');
     var storedData = JSON.parse(localStorage.getItem('Users'));
     var  email=document.querySelector('#Lemail').value;
     var  password=document.querySelector('#Lpassword').value;
+    var form = document.querySelector('#loginForm');
 
     var user = storedData.find(data => data.email === email);
 
     if (user) {
         if (user.password === password) {
-          alert("Valid credentials");
+          // alert("Valid credentials");
+          message.textContent = "Logged In successfully";
+          message.style.display = "block";
+          message.style.color = 'black';
+          message.style.textAlign = 'center';
+          form.reset();
+          setTimeout(function() {
+            message.style.display = "none";
+          }, 5000);
         } else {
-          alert("Invalid credentials");
+        // alert("Invalid credentials");
+          message.textContent = "Invalid credentials";
+          message.style.display = "block";
+          message.style.color = 'red';
+          message.style.textAlign = 'center';
+
+          setTimeout(function() {
+            message.style.display = "none";
+          }, 5000);
         }
       } else {
-        alert("User does not exist");
+        // alert("User does not exist");
+        message.textContent = "User does not exist";
+        message.style.display = "block";
+        message.style.color = 'red';
+        message.style.textAlign = 'center';
+        setTimeout(function() {
+          message.style.display = "none";
+        }, 5000);
       }
 }
